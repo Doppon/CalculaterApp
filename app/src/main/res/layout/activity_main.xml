@@ -1,16 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.ultima.calculator.MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
+    <EditText
+        android:id="@+id/numberInput1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="こんばんは！勤勉の民"
-        tools:layout_editor_absoluteY="234dp"
-        tools:layout_editor_absoluteX="122dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="98dp"
+        android:ems="10"
+        android:hint="数字を入力"
+        android:inputType="number" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/numberInput2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/numberInput1"
+        android:layout_below="@+id/calcButton1"
+        android:layout_marginTop="148dp"
+        android:ems="10"
+        android:hint="数字を入力"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/calcButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/numberInput1"
+        android:layout_alignBottom="@+id/numberInput1"
+        android:layout_marginStart="22dp"
+        android:layout_toEndOf="@+id/numberInput1"
+        android:text="計算" />
+
+    <Button
+        android:id="@+id/calcButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/numberInput2"
+        android:layout_alignStart="@+id/calcButton1"
+        android:text="計算" />
+
+    <Spinner
+        android:id="@+id/operatorSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="49dp"
+        android:layout_above="@+id/calcButton2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/calcButton2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="85dp"
+        android:layout_marginEnd="54dp"
+        android:text="続けて計算する" />
+
+    <TextView
+        android:id="@+id/calcResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nextButton"
+        android:layout_marginBottom="54dp"
+        android:layout_toStartOf="@+id/calcButton1"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:text="=計算結果" />
+</RelativeLayout>
